@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 void show_dPartition(dPartition* dp) {
-    printf("dPartition(start=%p, size=%x, firstFreeStart=%p)\n", 
+    printf("dPartition(start=%p, size=0x%x, firstFreeStart=%p)\n", 
         dp, (unsigned)dp->size, dp->firstFreeStart);
 }
 
