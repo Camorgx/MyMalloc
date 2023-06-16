@@ -17,11 +17,11 @@ extern "C" {
     }
 
     void* my_realloc(void* p, size_t new_size) {
-        if (my_free(p)) return NULL;
         void* pos = my_malloc(new_size);
         size_t old_size = ((EMB*)p - 1)->size;
         size_t copy_size = new_size > old_size ? old_size : new_size;
         memcpy(pos, p, copy_size);
+        if (my_free(p)) return NULL;
         return pos;
     }
 }
